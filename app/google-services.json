@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "86287348677",
+    "project_id": "abhishekphaltankar",
+    "storage_bucket": "abhishekphaltankar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86287348677:android:29a3d90e96eba25f6111ac",
+        "android_client_info": {
+          "package_name": "com.example.lms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86287348677-0slb97iv7s52drke48f0srs7laedi2ri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiXZTVoom23T0DeauZ38O8Xu_2Q8zfGdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86287348677-0slb97iv7s52drke48f0srs7laedi2ri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

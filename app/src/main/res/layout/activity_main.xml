@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp"
+
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Books"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button"
+        android:onClick="btn_logout"
+        android:text="Log out"
+        android:textColor="#FFFFFF"></Button>
+
+    <ImageButton
+        android:id="@+id/addbook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/addbook"
+        android:backgroundTint="#41178C"
+        android:onClick="btn_addbook"
+        android:backgroundTintMode="src_atop">
+
+
+
+    </ImageButton>
+    <TextView
+        android:id="@+id/addbook_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addbook"
+        android:paddingLeft="30dp"
+        android:text="ADD BOOK"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <ImageButton
+        android:id="@+id/irlog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/irbook1"
+        android:backgroundTint="#41178C"
+        android:onClick="btn_irlog"></ImageButton>
+
+    <TextView
+        android:id="@+id/irlog_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/irlog"
+        android:paddingRight="35dp"
+        android:text="I/R LOG"
+        android:layout_alignParentRight="true"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <ImageButton
+        android:id="@+id/issuebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addbook"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/issuebook1"
+        android:backgroundTint="#41178C"
+        android:onClick="btn_issuebook">
+
+
+    </ImageButton>
+    <TextView
+        android:id="@+id/issuebook_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/issuebook"
+        android:paddingLeft="20dp"
+        android:text="ISSUE BOOK"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <ImageButton
+        android:id="@+id/returnbook"
+        android:layout_width="102dp"
+        android:layout_height="111dp"
+        android:layout_below="@+id/irlog"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="55dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/returnbook1"
+        android:backgroundTint="#41178C"
+        android:onClick="btn_returnbook"></ImageButton>
+    <TextView
+        android:id="@+id/returnbook_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/returnbook"
+        android:layout_marginTop="10dp"
+        android:text="RETURN BOOK"
+        android:layout_alignParentRight="true"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/addreader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/issuebook"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/addreader"
+        android:backgroundTint="#41178C"
+        android:onClick="btn_addreader"></ImageButton>
+
+    <TextView
+        android:id="@+id/addreader_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addreader"
+        android:paddingLeft="20dp"
+        android:text="ADD READER"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/Books"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/issuebook"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/books1"
+        android:backgroundTint="#41178C"
+        android:onClick="btn_books"
+        >
+
+    </ImageButton>
+
+    <TextView
+        android:id="@+id/aboutus_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Books"
+        android:paddingRight="30dp"
+        android:text="BOOKS"
+
+        android:layout_alignParentRight="true"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+
+
+
+
+
+
+</RelativeLayout>

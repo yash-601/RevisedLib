@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".Issue_Book">
+
+
+    <EditText
+        android:id="@+id/Book_id_return"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Book Id"
+        android:textAlignment="center"
+        android:textColorHint="#838383"></EditText>
+
+    <EditText
+        android:id="@+id/Reader_id_return"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Book_id_return"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Reader Id"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+
+    <EditText
+        android:id="@+id/Date_Reg_issue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Reader_id_return"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Date Issued: YYYY-MM-DD"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+
+    <Button
+        android:id="@+id/Issue_Book_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Date_Reg_issue"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="180dp"
+        android:background="@drawable/button"
+        android:text="Issue Book"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Date_Reg_issue"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:onClick="btn_back"/>
+
+
+
+
+</RelativeLayout>

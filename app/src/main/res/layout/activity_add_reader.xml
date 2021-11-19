@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="40dp"
+    tools:context=".Add_Reader">
+
+    <EditText
+        android:id="@+id/Reader_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Reader Id"
+
+        android:textAlignment="center"
+        android:textColorHint="#838383"></EditText>
+
+    <EditText
+        android:id="@+id/Reader_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Reader_id"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Reader Name"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+    <EditText
+        android:id="@+id/Phone_Number"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Reader_name"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Phone Number"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+    <EditText
+        android:id="@+id/Email_Reader"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Phone_Number"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Email Id"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+    <EditText
+        android:id="@+id/Password_reader"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Email_Reader"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Password"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+    <EditText
+        android:id="@+id/Date_Reg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/Password_reader"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_text"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="Date Reg : YYYY-MM-DD"
+        android:textAlignment="center"
+        android:textColorHint="#FF838383"></EditText>
+
+
+    <Button
+        android:id="@+id/Add_Reader_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Date_Reg"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="180dp"
+        android:background="@drawable/button"
+        android:text="Add Reader"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/Back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Date_Reg"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button"
+        android:text="Back"
+        android:textColor="#FFFFFF"
+        android:onClick="btn_back"/>
+
+
+</RelativeLayout>

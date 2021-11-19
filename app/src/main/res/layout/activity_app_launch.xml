@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp"
+    android:orientation="vertical"
+    tools:context=".App_Launch">
+
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="343dp"
+
+        android:background="@drawable/welcome"></ImageView>
+    <Button
+        android:id="@+id/Reader_login"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:background="@drawable/button"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Reader Login"
+        android:textColor="@color/white"
+        android:onClick="btn_reader_login"></Button>
+
+    <Button
+        android:id="@+id/Librearian_login"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button"
+        android:text="Librarian Login"
+        android:textColor="@color/white"
+        android:onClick="btn_lib_login"
+        ></Button>
+
+</LinearLayout>
