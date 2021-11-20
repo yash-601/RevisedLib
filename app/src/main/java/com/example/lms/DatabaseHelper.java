@@ -10,6 +10,7 @@ import android.os.Build;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import java.lang.reflect.Array;
 import java.security.PublicKey;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -83,7 +84,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(publisher,customerModel.getPublisher());
         cv.put(edition,customerModel.getEdition());
         cv.put(pages,customerModel.getPages());
-        cv.put(status, 1);
+        cv.put(status,customerModel.setStatus(1));
 
         long insert = db.insert(books,null,cv);
         if(insert==-1){
@@ -245,12 +246,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<BookRows> returnlist=new ArrayList<>();
         //to gat data from data base
 
-        String querString="SELECT * FROM "+books;
+        String querString="SELECT * FROM "+books+" WHERE status = "+new int[]{1};
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor = db.rawQuery(querString,null);
         if (cursor.moveToFirst()){
-            //loop through cursor create customer objects and retiun  into the return list
-            cursor.moveToNext();//this was for extra -1 id added by me mistakely
+            //loop through cursor create customer objects and return  into the return list
             do {
                 int dbookid=cursor.getInt(0);
                 String dbookname=cursor.getString(1);
@@ -258,8 +258,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 String dpublisher=cursor.getString(3);
                 int dedition=cursor.getInt(4);
                 int dpages=cursor.getInt(5);
+                int dstatus=cursor.getInt(6);
 
-                BookRows newCustomer=new BookRows(dbookid,dbookname,disbn,dpublisher,dedition,dpages);
+
+                BookRows newCustomer=new BookRows(dbookid,dbookname,disbn,dpublisher,dedition,dpages,dstatus);
                 returnlist.add(newCustomer);
 
             }while(cursor.moveToNext());
@@ -276,6 +278,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return returnlist;
 
+    }
+/*
+    //for ir log
+    //IRLog+" ("+bookid+" INT, "+reader_id+" INT, "+date+" TEXT, "+Entry_Type+" TEXT)";
+    public ArrayList getlogs(){
+        ArrayList returnlist=new ArrayList<>();
+        String[] iplist={};
+        //to gat data from data base
+
+        String querString="SELECT * FROM "+IRLog;
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(querString,null);
+        if (cursor.moveToFirst()){
+            //loop through cursor create customer objects and return  into the return list
+            do {
+                String dbookid=cursor.getString(0);
+                String dreaderid=cursor.getString(1);
+                String ddate=cursor.getString(2);
+                String dentrytype=cursor.getString(3);
+
+                //BookRows newCustomer=new BookRows(dbookid,dbookname,disbn,dpublisher,dedition,dpages,dstatus);
+                iplist= new String[]{dbookid,dreaderid,ddate,dentrytype};
+                returnlist.add(iplist);
+
+            }while(cursor.moveToNext());
+
+
+        }else{
+            //failure do not add anything
+
+
+        }
+
+        //always close cursor and db
+        cursor.close();
+        db.close();
+        return returnlist;
+
+    }*/
+    public Cursor getir(){
+        SQLiteDatabase DB=this.getWritableDatabase();
+        Cursor cursor=DB.rawQuery("SELECT * FROM IRLog",null);
+        return cursor;
     }
 
 

@@ -46,11 +46,11 @@ public class Add_Book extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    customerModel=new BookRows(Integer.parseInt(mbid.getText().toString()),mname.getText().toString(),Integer.parseInt(misbn.getText().toString()),mpublisher.getText().toString(),Integer.parseInt(medition.getText().toString()),Integer.parseInt(mpages.getText().toString()));
+                    customerModel=new BookRows(Integer.parseInt(mbid.getText().toString()),mname.getText().toString(),Integer.parseInt(misbn.getText().toString()),mpublisher.getText().toString(),Integer.parseInt(medition.getText().toString()),Integer.parseInt(mpages.getText().toString()),1);
                     //Toast.makeText(Add_Book.this, customerModel.toString(), Toast.LENGTH_SHORT).show();
                 }catch (Exception e){
                     Toast.makeText(Add_Book.this, "Error Adding book", Toast.LENGTH_SHORT).show();
-                    customerModel = new BookRows(-1,"error",0,"error",0,0);
+                    customerModel = new BookRows(-1,"error",0,"error",0,0,0);
 
 
                 }

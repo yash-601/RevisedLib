@@ -13,14 +13,14 @@ public class BookRows {
     //constructor
 
 
-    public BookRows(int bookid, String bname, int isbn, String publisher, int edition, int pages) {
+    public BookRows(int bookid, String bname, int isbn, String publisher, int edition, int pages, int status) {
         this.bookid = bookid;
         this.bname = bname;
         this.isbn = isbn;
         this.publisher = publisher;
         this.edition = edition;
         this.pages = pages;
-        this.status = 1;
+        this.status = status;
     }
 
     public BookRows(){}
@@ -28,14 +28,20 @@ public class BookRows {
 
     @Override
     public String toString() {
-        return "BookRows{" +
-                "bookid=" + bookid +
-                ", bname='" + bname + '\'' +
-                ", isbn=" + isbn +
-                ", publisher='" + publisher + '\'' +
-                ", edition=" + edition +
-                ", pages=" + pages +
-                '}';
+        String st;
+        if (status==1){
+            st="AV";
+        }
+        else{
+            st="UNAV";
+        }
+        return "ID=" + bookid +
+                ", NAME='" + bname + '\'' +
+                ", ISBN=" + isbn +
+                ", PUBLISHER='" + publisher + '\'' +
+                ", EDITION=" + edition +
+                ", PAGES=" + pages +
+                ", STATUS="+st;
     }
 
 
@@ -89,8 +95,9 @@ public class BookRows {
         this.pages = pages;
     }
 
-    public void setStatus(int status) {
+    public int setStatus(int status) {
         this.status = status;
+        return status;
     }
 
     public int getStatus() {return status;}
