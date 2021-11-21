@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/layout/activity_issue_book.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/layout/activity_issued_books_reader.xml" value="0.17097264437689969" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17097264437689969" />
+        <entry key="app/src/main/res/layout/activity_return_book.xml" value="0.33" />
       </map>
     </option>
   </component>

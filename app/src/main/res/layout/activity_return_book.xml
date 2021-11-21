@@ -48,38 +48,26 @@
         android:textColorHint="#FF838383"></EditText>
 
 
-
-    <Button
-        android:id="@+id/Fine"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Date_Reg_return"
-        android:layout_marginTop="30dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button"
-        android:text="Fine"
-        android:textColor="#FFFFFF" />
-
-
-    <EditText
+    <TextView
         android:id="@+id/Fine_txt"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/Fine"
+        android:layout_below="@+id/Return_Book_Button"
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_text"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:hint="0"
+        android:hint="FINE"
         android:textAlignment="center"
-        android:textColorHint="#FF838383"></EditText>
+        android:textColorHint="#FF838383"
+        android:textSize="24sp"></TextView>
 
 
     <Button
         android:id="@+id/Return_Book_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Fine_txt"
+        android:layout_below="@+id/Date_Reg_return"
         android:layout_marginTop="30dp"
         android:layout_marginRight="180dp"
         android:background="@drawable/button"
@@ -90,7 +78,7 @@
         android:id="@+id/Back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Fine_txt"
+        android:layout_below="@+id/Date_Reg_return"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/button"

@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String books="books"; // table name
@@ -179,8 +180,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return noOfDaysBetween;
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public int returnBook(int book_id, int readerid, String date_of_return) throws ParseException {
+    public TwovaluesReturn returnBook(int book_id, int readerid, String date_of_return) throws ParseException {
 
         int success = 1;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -200,7 +202,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long insert_in_logs = db.insert(IRLog,null, logs);
         if(insert_in_logs == -1){
-            return 0;
+            return new TwovaluesReturn(0,0);
         }
         db.close();
 
@@ -237,7 +239,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // deleting from issued books
         db.delete(Issued_Books, bookid + " = ?", new String[] {String.valueOf(book_id)});
 
-        return success;
+        //return success,fine_calc;
+        return new TwovaluesReturn(success,fine_calc);
     }
 
     //this is for books.java to display books in librarian
