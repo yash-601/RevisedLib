@@ -37,11 +37,12 @@ public class Issued_Books_Reader extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int id= db.get_id(email);
+                Toast.makeText(Issued_Books_Reader.this, "email="+id, Toast.LENGTH_SHORT).show();
 
                 Cursor res=db.getmybooks(id);
 
                 if(res.getCount()==0){
-                    Toast.makeText(Issued_Books_Reader.this, "No books issued", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Issued_Books_Reader.this, "No books issued", Toast.LENGTH_SHORT).show();
                 }
                 //ssued_Books+" ("+bookid+" INT,"+reader_id+" INT, "+date_of_issue+" TEXT)
 

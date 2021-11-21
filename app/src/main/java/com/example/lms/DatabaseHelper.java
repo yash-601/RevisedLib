@@ -360,7 +360,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int get_id (String email) {
         int id = -1;
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery("SELECT reader_id FROM " + readers + " WHERE " + email_id + "=?", new String[]{email}, null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT reader_id FROM readers WHERE email_id = "+email, null);
         if (c.moveToFirst()) {
             id = c.getInt(0);
         }
@@ -369,7 +369,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getmybooks(int readerid) {
         SQLiteDatabase DB=this.getWritableDatabase();
-        Cursor cursor=DB.rawQuery("SELECT * FROM "+ Issued_Books + " WHERE " + reader_id + " = " + readerid,null);
+        Cursor cursor=DB.rawQuery("SELECT * FROM Issued_Books WHERE reader_id = " + readerid,null);
         return cursor;
 
     }
