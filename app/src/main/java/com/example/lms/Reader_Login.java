@@ -23,10 +23,14 @@ public class Reader_Login extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLogin;
     ProgressBar progressBar;
+    public String mail;
 //    FirebaseAuth fAuth;
 
 
+    public String retmail(){
+        return mail;
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,6 +88,7 @@ public class Reader_Login extends AppCompatActivity {
         @Override
             public void onClick(View view) {
                 String email= mEmail.getText().toString().trim();
+                mail=email;
                 String password=mPassword.getText().toString().trim();
                 boolean ok = true;
                 if (email.equals("")) {

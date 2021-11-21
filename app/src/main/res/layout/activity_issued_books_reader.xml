@@ -30,8 +30,9 @@
             android:onClick="btn_back"
             android:text="Back"
             android:textColor="#FFFFFF" />
+
         <Button
-            android:id="@+id/show"
+            android:id="@+id/show_red"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/issue_show"
