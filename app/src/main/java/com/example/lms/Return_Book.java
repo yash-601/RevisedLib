@@ -46,14 +46,15 @@ public class Return_Book extends AppCompatActivity {
                     //success = databaseHelper.returnBook(Integer.parseInt(book_id.getText().toString()), Integer.parseInt(reader_id.getText().toString()), date_of_return.getText().toString());
                     success=ans.status;
                     fine=ans.fine;
+
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
                 if (success == 1){
                     Toast.makeText(Return_Book.this, "Book Returned Successfully!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Return_Book.this, "fine = " + fine, Toast.LENGTH_SHORT).show();
                     //Cmmented out this as fine is not visible
-                    //fineshow.setText(fine);
-
+                    fineshow.setText(String.valueOf(fine));
                 }
 
                 else

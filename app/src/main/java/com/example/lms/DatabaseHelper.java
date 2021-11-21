@@ -146,7 +146,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             ContentValues updated = new ContentValues();
             updated.put(status, 0);
             // status 1 -> available ] status 0 -> issued
-            db.update(books, updated, book_id + " = ?", new String[] {String.valueOf(book_id)});
+            db.update(books, updated, bookid + " = ?", new String[] {String.valueOf(book_id)});
 
             // inserting data in irlog table
             ContentValues logs = new ContentValues();
@@ -167,6 +167,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return stat;
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public int date_diff (String start_date, String end_date) throws ParseException {
 
@@ -179,6 +180,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return noOfDaysBetween;
     }
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
