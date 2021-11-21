@@ -356,6 +356,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor=DB.rawQuery("SELECT * FROM IRLog",null);
         return cursor;
     }
+
+    public int get_id (String email) {
+        int id = -1;
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT reader_id FROM " + readers + " WHERE " + email_id + "=?", new String[]{email}, null);
+        if (c.moveToFirst()) {
+            id = c.getInt(0);
+        }
+        return id;
+    }
+
+    public Cursor getmybooks(int readerid) {
+        SQLiteDatabase DB=this.getWritableDatabase();
+        Cursor cursor=DB.rawQuery("SELECT * FROM "+ Issued_Books + " WHERE " + reader_id + " = " + readerid,null);
+        return cursor;
+
+    }
 }
 
 

@@ -15,7 +15,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'> Student's Desk</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'> Reader's Desk</font>"));
 
     }
 

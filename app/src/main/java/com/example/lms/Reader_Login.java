@@ -26,6 +26,7 @@ public class Reader_Login extends AppCompatActivity {
 //    FirebaseAuth fAuth;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +78,7 @@ public class Reader_Login extends AppCompatActivity {
 //
 //            }
 //        });
+
 
         mLogin.setOnClickListener(new View.OnClickListener() {
         @Override

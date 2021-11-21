@@ -41,14 +41,14 @@ public class Books extends AppCompatActivity {
 
                 StringBuffer buffer=new StringBuffer();
                 while (res.moveToNext()){
+                    buffer.append("\n");
                     buffer.append("BOOKID: "+res.getString(0)+", ");
                     buffer.append("BOOKNAME: "+res.getString(1)+", ");
                     buffer.append("ISBN: "+res.getString(2)+", ");
                     buffer.append("PUBLISHER: "+res.getString(3)+", ");
                     buffer.append("EDITION: "+res.getString(4)+", ");
-                    buffer.append("PAGES: "+res.getString(5)+", ");
-                    buffer.append("STATUS: "+res.getString(6)+"\n");
-                    buffer.append("\n");
+                    buffer.append("PAGES: "+res.getString(5)+"\n ");
+//                    buffer.append("STATUS: "+res.getString(6)+"\n");
                     //newview.setAdapter(adapter);
                 }
                 ArrayAdapter adapter= new ArrayAdapter(Books.this, android.R.layout.simple_list_item_1, Collections.singletonList(buffer));
