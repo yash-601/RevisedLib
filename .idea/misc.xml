@@ -5,10 +5,12 @@
       <map>
         <entry key="app/src/main/res/layout/activity_app_launch.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_books.xml" value="0.3515625" />
+        <entry key="app/src/main/res/layout/activity_books2.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_ir_log.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/layout/activity_issue_book.xml" value="0.30364583333333334" />
         <entry key="app/src/main/res/layout/activity_issued_books_reader.xml" value="0.17097264437689969" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17097264437689969" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/layout/activity_return_book.xml" value="0.33" />
       </map>
     </option>

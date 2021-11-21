@@ -10,26 +10,37 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_marginTop="50dp"
+
+        <ListView
             android:id="@+id/irlog_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/edit_text"
-            ></TextView>
+
+            android:background="@drawable/edit_text"></ListView>
 
         <Button
             android:id="@+id/Back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="30dp"
             android:layout_below="@+id/irlog_view"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/button"
             android:onClick="btn_back"
             android:text="Back"
             android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/irlog_view"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="200dp"
+            android:background="@drawable/button"
+            android:text="Show"
+            android:textColor="#FFFFFF" />
     </RelativeLayout>
-
 </ScrollView>
