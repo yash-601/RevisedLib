@@ -21,13 +21,25 @@
             android:id="@+id/Back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="30dp"
             android:layout_below="@+id/irlogview"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
             android:background="@drawable/button"
             android:onClick="btn_back"
             android:text="Back"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/irlogview"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="200dp"
+            android:background="@drawable/button"
+            android:text="Show"
             android:textColor="#FFFFFF" />
     </RelativeLayout>
 

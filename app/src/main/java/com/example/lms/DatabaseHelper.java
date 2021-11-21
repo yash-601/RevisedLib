@@ -241,7 +241,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //this is for books.java to display books in librarian
-
+/*
     public List<BookRows> getEveryone(){
         List<BookRows> returnlist=new ArrayList<>();
         //to gat data from data base
@@ -278,7 +278,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return returnlist;
 
-    }
+    }*/
 /*
     //for ir log
     //IRLog+" ("+bookid+" INT, "+reader_id+" INT, "+date+" TEXT, "+Entry_Type+" TEXT)";
@@ -317,6 +317,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnlist;
 
     }*/
+
+    public Cursor getbooks(){
+        SQLiteDatabase DB=this.getWritableDatabase();
+        Cursor cursor=DB.rawQuery("SELECT * FROM books WHERE status = 1",null);
+        return cursor;
+
+    }
     public Cursor getir(){
         SQLiteDatabase DB=this.getWritableDatabase();
         Cursor cursor=DB.rawQuery("SELECT * FROM IRLog",null);

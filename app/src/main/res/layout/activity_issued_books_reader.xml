@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
         <TextView
             android:layout_marginTop="50dp"
-            android:id="@+id/irlog_view"
+            android:id="@+id/irlog_view2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text"
@@ -24,7 +24,7 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:layout_marginTop="30dp"
-            android:layout_below="@+id/irlog_view"
+            android:layout_below="@+id/irlog_view2"
             android:background="@drawable/button"
             android:onClick="btn_back"
             android:text="Back"
