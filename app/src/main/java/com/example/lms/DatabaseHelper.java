@@ -3,9 +3,11 @@ package com.example.lms;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -110,6 +112,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long insertSuccess = sqLiteDatabase.insert(readers, null, cv);
         return insertSuccess != -1;
+    }
+
+    public boolean check_reader_login(String email, String pass) throws SQLException {
+        boolean exists = false;
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        // checking email
+        String selectQuery;
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM " +  readers + " WHERE " + email_id + "=?", new String[]{email}, null);
+        if (c.moveToFirst())
+            exists = true;
+        c.close();
+
+        // checking password
+        selectQuery = "SELECT * FROM " + readers + " WHERE " + password + " = " + pass;
+        c = sqLiteDatabase.rawQuery(selectQuery, null);
+        exists = c.moveToFirst();
+        c.close();
+        sqLiteDatabase.close();
+
+        return  exists;
     }
 
     public int issueBook(int book_id, int readerid, String dateofissue) {
@@ -334,11 +356,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor=DB.rawQuery("SELECT * FROM IRLog",null);
         return cursor;
     }
-
-
-
-
-
 }
 
 

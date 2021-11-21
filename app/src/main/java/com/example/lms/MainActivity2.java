@@ -20,7 +20,7 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public void btn_logout(View view) {
-        FirebaseAuth.getInstance().signOut();
+//        FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),App_Launch.class));
         finish();
     }

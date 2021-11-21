@@ -23,7 +23,7 @@ public class Reader_Login extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLogin;
     ProgressBar progressBar;
-    FirebaseAuth fAuth;
+//    FirebaseAuth fAuth;
 
 
     @Override
@@ -36,47 +36,76 @@ public class Reader_Login extends AppCompatActivity {
         mEmail=findViewById(R.id.Email_login);
         mPassword=findViewById(R.id.Password_login);
         progressBar=findViewById(R.id.progressBar3);
-        fAuth=FirebaseAuth.getInstance();
+//        fAuth=FirebaseAuth.getInstance();
         mLogin=findViewById(R.id.Login);
 
 
+//        mLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String email= mEmail.getText().toString().trim();
+//                String password=mPassword.getText().toString().trim();
+//
+//                if(TextUtils.isEmpty(email)){
+//                    mEmail.setError("Email Is Required");
+//                    progressBar.setVisibility(View.INVISIBLE);
+//                    return;
+//                }
+//                if(TextUtils.isEmpty(password)){
+//                    mPassword.setError("Password Is Required");
+//                    progressBar.setVisibility(View.INVISIBLE);
+//                    return;
+//                }
+//
+//
+//                progressBar.setVisibility(View.VISIBLE);
+//                //authentication
+//
+//                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()){
+//                            Toast.makeText(Reader_Login.this,"Sign In Sucessful", Toast.LENGTH_SHORT).show();
+//                            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
+//                        }
+//                        else{
+//                            Toast.makeText(Reader_Login.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                            progressBar.setVisibility(View.INVISIBLE);
+//                        }
+//                    }
+//                });
+//
+//            }
+//        });
+
         mLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        @Override
+            public void onClick(View view) {
                 String email= mEmail.getText().toString().trim();
                 String password=mPassword.getText().toString().trim();
-
-                if(TextUtils.isEmpty(email)){
-                    mEmail.setError("Email Is Required");
-                    progressBar.setVisibility(View.INVISIBLE);
-                    return;
+                boolean ok = true;
+                if (email.equals("")) {
+                    Toast.makeText(Reader_Login.this, "Email is required", Toast.LENGTH_SHORT).show();
+                    ok = false;
                 }
-                if(TextUtils.isEmpty(password)){
-                    mPassword.setError("Password Is Required");
-                    progressBar.setVisibility(View.INVISIBLE);
-                    return;
+                if (password.equals("")) {
+                    Toast.makeText(Reader_Login.this, "Password field is required", Toast.LENGTH_SHORT).show();
+                    ok = false;
                 }
 
+                if (ok) {
+                    DatabaseHelper dbHelper = new DatabaseHelper(Reader_Login.this);
+                    boolean success = dbHelper.check_reader_login(email, password);
 
-                progressBar.setVisibility(View.VISIBLE);
-                //authentication
-
-                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            Toast.makeText(Reader_Login.this,"Sign In Sucessful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity2.class));
-                        }
-                        else{
-                            Toast.makeText(Reader_Login.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            progressBar.setVisibility(View.INVISIBLE);
-                        }
+                    if (success) {
+                        Toast.makeText(Reader_Login.this, "Signed in Successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MainActivity2.class));
+                    } else {
+                        Toast.makeText(Reader_Login.this, "Sign in Failed! Try Again", Toast.LENGTH_SHORT).show();
                     }
-                });
-
+                }
             }
-        });
+    });
 
     }
 
