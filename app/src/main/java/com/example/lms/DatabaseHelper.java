@@ -214,7 +214,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues updated = new ContentValues();
         updated.put(status, 1);
         // status 1 -> available ] status 0 -> issued
-        db.update(books, updated, book_id + " = ?", new String[] {String.valueOf(book_id)});
+        db.update(books, updated, bookid + " = ?", new String[] {String.valueOf(book_id)});
 
         // adding entry to irlog
         ContentValues logs = new ContentValues();
