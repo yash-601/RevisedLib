@@ -36,8 +36,10 @@ public class Reader_Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reader_login);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'> Student Login</font>"));
-
-
+        
+        // creating instance of issued_books_reader
+        Issued_Books_Reader instance = new Issued_Books_Reader();
+        
         mEmail=findViewById(R.id.Email_login);
         mPassword=findViewById(R.id.Password_login);
         progressBar=findViewById(R.id.progressBar3);
@@ -88,7 +90,7 @@ public class Reader_Login extends AppCompatActivity {
         @Override
             public void onClick(View view) {
                 String email= mEmail.getText().toString().trim();
-                mail=email;
+                instance.get_email(email);
                 String password=mPassword.getText().toString().trim();
                 boolean ok = true;
                 if (email.equals("")) {
