@@ -360,7 +360,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public int get_id (String email) {
         int id = -1;
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor c = sqLiteDatabase.rawQuery("SELECT reader_id FROM readers WHERE email_id = "+email, null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM " +  readers + " WHERE " + email_id + "=?", new String[]{email});
         if (c.moveToFirst()) {
             id = c.getInt(0);
         }

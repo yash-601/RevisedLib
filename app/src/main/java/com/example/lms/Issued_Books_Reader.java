@@ -19,6 +19,10 @@ public class Issued_Books_Reader extends AppCompatActivity {
     ListView disp;
     static String fin_mail;
 
+    public void get_email(String mail) {
+        fin_mail = mail;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
