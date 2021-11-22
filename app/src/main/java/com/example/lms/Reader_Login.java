@@ -39,6 +39,8 @@ public class Reader_Login extends AppCompatActivity {
         
         // creating instance of issued_books_reader
         Issued_Books_Reader instance = new Issued_Books_Reader();
+        // creating instance of mainactivity2
+        MainActivity2 inst = new MainActivity2();
         
         mEmail=findViewById(R.id.Email_login);
         mPassword=findViewById(R.id.Password_login);
@@ -103,6 +105,7 @@ public class Reader_Login extends AppCompatActivity {
                 }
                 String email= mEmail.getText().toString().trim();
                 instance.get_email(email);
+                inst.get_user_mail(email);
                 String password=mPassword.getText().toString().trim();
                 boolean ok = true;
                 if (email.equals("")) {

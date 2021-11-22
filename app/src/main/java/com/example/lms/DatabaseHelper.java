@@ -78,8 +78,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //this is for adding book librarian
     public boolean addOne(BookRows customerModel){
 
-        SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues cv= new ContentValues();
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
 
         cv.put(bookid,customerModel.getBookid());
         cv.put(bookname,customerModel.getBname());
@@ -90,7 +90,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(status,customerModel.setStatus(1));
 
         long insert = db.insert(books,null,cv);
-        if(insert==-1){
+        if(insert==-1) {
             return false;
         }
         else{
@@ -119,7 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         // checking email
         String selectQuery;
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM " +  readers + " WHERE " + email_id + "=?", new String[]{email}, null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM " + readers + " WHERE " + email_id + "=?", new String[]{email}, null);
         if (c.moveToFirst())
             exists = true;
         c.close();
@@ -159,7 +159,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             cv.put(date_of_issue, dateofissue);
 
             long insert = db.insert(Issued_Books,null,cv);
-            if(insert==-1){
+            if (insert==-1) {
                 return 0;
             }
 
@@ -364,7 +364,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (c.moveToFirst()) {
             id = c.getInt(0);
         }
+        c.close();
+        sqLiteDatabase.close();
         return id;
+    }
+
+    public String get_name (int id) {
+        String name = "";
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM " + readers + " WHERE " + reader_id + " = " + id, null);
+        if (c.moveToFirst()) {
+            name = c.getString(1);
+        }
+        c.close();
+        sqLiteDatabase.close();
+        return name;
     }
 
     public Cursor getmybooks(int readerid) {
@@ -382,7 +396,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void fine_zero(int readerid){
+    public void fine_zero(int readerid) {
 
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues updated = new ContentValues();
