@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,6 +46,32 @@ public class Add_Book extends AppCompatActivity {
             BookRows customerModel;
             @Override
             public void onClick(View v) {
+
+                if(TextUtils.isEmpty(mbid.getText().toString())){
+                    Toast.makeText(Add_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(mname.getText().toString())){
+                    Toast.makeText(Add_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(misbn.getText().toString())){
+                    Toast.makeText(Add_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(mpublisher.getText().toString())){
+                    Toast.makeText(Add_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(medition.getText().toString())){
+                    Toast.makeText(Add_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(mpages.getText().toString())){
+                    Toast.makeText(Add_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 try {
                     customerModel=new BookRows(Integer.parseInt(mbid.getText().toString()),mname.getText().toString(),Integer.parseInt(misbn.getText().toString()),mpublisher.getText().toString(),Integer.parseInt(medition.getText().toString()),Integer.parseInt(mpages.getText().toString()),1);
                     //Toast.makeText(Add_Book.this, customerModel.toString(), Toast.LENGTH_SHORT).show();

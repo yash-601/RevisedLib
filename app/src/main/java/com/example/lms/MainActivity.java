@@ -48,4 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public void btn_books(View view) {
         startActivity(new Intent(getApplicationContext(),Books.class));
     }
+
+    public void btn_readers(View view) {
+        startActivity(new Intent(getApplicationContext(),Reader_display.class));
+    }
 }

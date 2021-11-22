@@ -14,8 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/reader"
-        android:backgroundTint="@color/purple_700"
-        ></ImageView>
+        android:backgroundTint="@color/purple_700"></ImageView>
 
     <EditText
         android:id="@+id/Email_login"

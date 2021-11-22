@@ -37,6 +37,7 @@ public class Books extends AppCompatActivity {
 
                 if(res.getCount()==0){
                     Toast.makeText(Books.this, "Library is empty.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 StringBuffer buffer=new StringBuffer();

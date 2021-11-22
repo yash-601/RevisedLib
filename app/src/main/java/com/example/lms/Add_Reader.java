@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,6 +37,33 @@ public class Add_Reader extends AppCompatActivity {
             Reader reader;
             @Override
             public void onClick(View view) {
+
+                if(TextUtils.isEmpty(reader_id.getText().toString())){
+                    Toast.makeText(Add_Reader.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(reader_name.getText().toString())){
+                    Toast.makeText(Add_Reader.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(phone_num.getText().toString())){
+                    Toast.makeText(Add_Reader.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(email_id.getText().toString())){
+                    Toast.makeText(Add_Reader.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(password.getText().toString())){
+                    Toast.makeText(Add_Reader.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(date_of_registration.getText().toString())){
+                    Toast.makeText(Add_Reader.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
                 try {
                     reader = new Reader(Integer.parseInt(reader_id.getText().toString()), reader_name.getText().toString(), phone_num.getText().toString(), email_id.getText().toString(), password.getText().toString(), date_of_registration.getText().toString());
                 }

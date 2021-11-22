@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +31,22 @@ public class Issue_Book extends AppCompatActivity {
         issue_book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 DatabaseHelper databaseHelper=new DatabaseHelper(Issue_Book.this);
+                if(TextUtils.isEmpty(book_id.getText().toString())){
+                    Toast.makeText(Issue_Book.this, "Enter Details.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(reader_id.getText().toString())){
+                    Toast.makeText(Issue_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(date_of_issue.getText().toString())){
+                    Toast.makeText(Issue_Book.this, "Enter Details", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 int success = databaseHelper.issueBook(Integer.parseInt(book_id.getText().toString()), Integer.parseInt(reader_id.getText().toString()), date_of_issue.getText().toString());
                 if (success == 1)
                     Toast.makeText(Issue_Book.this, "Book Issued Successfully!!", Toast.LENGTH_SHORT).show();

@@ -9,11 +9,12 @@
     tools:context=".App_Launch">
 
     <ImageView
+        android:layout_width="348dp"
+        android:layout_height="321dp"
+        android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_width="match_parent"
-        android:layout_height="343dp"
+        android:background="@drawable/libnewnew"></ImageView>
 
-        android:background="@drawable/welcome"></ImageView>
     <Button
         android:id="@+id/Reader_login"
         android:layout_marginTop="50dp"

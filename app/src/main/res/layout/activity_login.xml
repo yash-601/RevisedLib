@@ -13,8 +13,7 @@
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:background="@drawable/login"
-        ></ImageView>
+        android:background="@drawable/login"></ImageView>
 
     <EditText
         android:id="@+id/Email_login"

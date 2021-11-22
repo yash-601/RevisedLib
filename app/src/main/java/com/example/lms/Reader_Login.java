@@ -89,6 +89,18 @@ public class Reader_Login extends AppCompatActivity {
         mLogin.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View view) {
+
+                if(TextUtils.isEmpty(mEmail.getText().toString())){
+                    Toast.makeText(Reader_Login.this, "Enter details", Toast.LENGTH_SHORT).show();
+                    return;
+
+                }
+
+                if(TextUtils.isEmpty(mPassword.getText().toString())){
+                    Toast.makeText(Reader_Login.this, "Enter details", Toast.LENGTH_SHORT).show();
+                    return;
+
+                }
                 String email= mEmail.getText().toString().trim();
                 instance.get_email(email);
                 String password=mPassword.getText().toString().trim();

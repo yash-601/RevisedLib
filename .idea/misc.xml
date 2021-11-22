@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/layout/activity_app_launch.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_books.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_issue_book.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/activity_issued_books_reader.xml" value="0.16337386018237082" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.16337386018237082" />
+        <entry key="app/src/main/res/layout/activity_reader_display.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/activity_reader_login.xml" value="0.29483695652173914" />
+        <entry key="app/src/main/res/layout/activity_return_book.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

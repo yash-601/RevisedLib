@@ -52,15 +52,17 @@ public class IR_Log extends AppCompatActivity {
 
                 if(res.getCount()==0){
                     Toast.makeText(IR_Log.this, "IR is empty.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 StringBuffer buffer=new StringBuffer();
                 while (res.moveToNext()){
+                    buffer.append("\n");
                     buffer.append("BOOKID: "+res.getString(0)+", ");
                     buffer.append("READERID: "+res.getString(1)+", ");
                     buffer.append("DATE: "+res.getString(2)+", ");
                     buffer.append("ENTRYTYPE: "+res.getString(3)+"\n");
-                    buffer.append("\n");
+
                     //newview.setAdapter(adapter);
                 }
                 ArrayAdapter adapter= new ArrayAdapter(IR_Log.this, android.R.layout.simple_list_item_1, Collections.singletonList(buffer));

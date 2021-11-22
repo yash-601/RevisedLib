@@ -24,7 +24,7 @@ public class Books2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books2);
-        Objects.requireNonNull(getSupportActionBar()).setTitle(Html.fromHtml("<font color='#ffffff'> Books</font>"));
+        Objects.requireNonNull(getSupportActionBar()).setTitle(Html.fromHtml("<font color='#ffffff'> Library</font>"));
         mview=findViewById(R.id.irlog_view);
         button=findViewById(R.id.show);
         DatabaseHelper databaseHelper=new DatabaseHelper(Books2.this);
@@ -39,18 +39,19 @@ public class Books2 extends AppCompatActivity {
 
                 if(res.getCount()==0){
                     Toast.makeText(Books2.this, "Library is empty.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
                 StringBuffer buffer=new StringBuffer();
                 while (res.moveToNext()){
+                    buffer.append("\n");
                     buffer.append("BOOKID: "+res.getString(0)+", ");
                     buffer.append("BOOKNAME: "+res.getString(1)+", ");
                     buffer.append("ISBN: "+res.getString(2)+", ");
                     buffer.append("PUBLISHER: "+res.getString(3)+", ");
                     buffer.append("EDITION: "+res.getString(4)+", ");
-                    buffer.append("PAGES: "+res.getString(5)+", ");
-                    buffer.append("STATUS: "+res.getString(6)+"\n");
-                    buffer.append("\n");
+                    buffer.append("PAGES: "+res.getString(5)+"\n ");
+
                     //newview.setAdapter(adapter);
                 }
                 ArrayAdapter adapter= new ArrayAdapter(Books2.this, android.R.layout.simple_list_item_1, Collections.singletonList(buffer));

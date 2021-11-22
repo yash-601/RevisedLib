@@ -373,6 +373,31 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return cursor;
 
     }
+
+    // for displaying readers
+    public Cursor getreaders() {
+        SQLiteDatabase DB=this.getWritableDatabase();
+        Cursor cursor=DB.rawQuery("SELECT * FROM readers",null);
+        return cursor;
+
+    }
+
+    public void fine_zero(int readerid){
+
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues updated = new ContentValues();
+        updated.put(fine,0);
+        DB.update(readers,updated,reader_id + " = ?", new String[]{String.valueOf(readerid)});
+
+    }
+    //SQLiteDatabase db = this.getWritableDatabase();
+    // updating status of book in the books table
+    //ContentValues updated = new ContentValues();
+    //    updated.put(status, 1);
+    // status 1 -> available ] status 0 -> issued
+    //    db.update(books, updated, bookid + " = ?", new String[] {String.valueOf(book_id)});
+
+
 }
 
 
