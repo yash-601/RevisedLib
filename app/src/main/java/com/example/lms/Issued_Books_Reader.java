@@ -17,6 +17,7 @@ import java.util.Collections;
 public class Issued_Books_Reader extends AppCompatActivity {
     Button button;
     ListView disp;
+    static String fin_mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +29,8 @@ public class Issued_Books_Reader extends AppCompatActivity {
 
 
         DatabaseHelper db=new DatabaseHelper(Issued_Books_Reader.this);
-        Reader_Login reader= new Reader_Login();
 
-        String email = reader.retmail();
+        String email = fin_mail;
 
 
         button.setOnClickListener(new View.OnClickListener() {
