@@ -33,7 +33,7 @@ public class MainActivity2 extends AppCompatActivity {
         int id = dbHelper.get_id(mail);
         String name = dbHelper.get_name(id);
 
-        textView.setText( "ID: "+ id +"\n" + "Name: " + name  );
+        textView.setText("  ID: "+ id +"\n" + "  Name: " + name+"  ");
     }
 
     public void btn_logout(View view) {
